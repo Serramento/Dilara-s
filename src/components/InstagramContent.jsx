@@ -2,13 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { InstagramEmbed } from "react-social-media-embed";
 
 const InstagramContent = (props) => {
   return (
     <div className="shadow-md w-80 lg:w-65 bg-[#FAFAFA]">
       <div>
-        <div className="h-80 lg:h-65 relative">
-          <img src={props.post.image} className="w-full h-full object-cover " />
+        <div className="h-70 lg:h-65 relative">
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <InstagramEmbed
+              url={props.post.href}
+              width={328}
+              height={230}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         <div className="m-7 text-left">
@@ -18,24 +26,13 @@ const InstagramContent = (props) => {
           <p className="text-[#C0BABA] text-sm font-semibold text-left mt-3">
             {props.post.description}
           </p>
-          <div className="flex flex-row justify-between mt-7">
-            <div className="flex flex-row text-bluex">
-              <i className="fa-regular fa-clock"></i>
-              <p className="text-[#C0BABA] text-xs font-semibold pl-1">
-                22 April 2021
-              </p>
-            </div>
-            <div className="flex flex-row text-[#98B8DF]">
-              <i className="fa-solid fa-chart-line"></i>
-              <p className="text-[#C0BABA] text-xs font-semibold pl-1">
-                10 comments
-              </p>
-            </div>
-          </div>
-          <div className="text-bluex">
-            <button className="text-[#39405A] font-bold text-sm mt-7 pr-1 mb-10 lg:mb-3">
+          <div className="text-bluex pt-5">
+            <Link
+              to={props.post.href}
+              className="text-[#39405A] font-bold text-sm mt-7 pr-1 mb-10 lg:mb-3"
+            >
               Aprender Más
-            </button>
+            </Link>
             <FontAwesomeIcon
               icon={faChevronRight}
               size="sm"

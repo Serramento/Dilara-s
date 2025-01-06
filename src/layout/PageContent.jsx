@@ -17,33 +17,13 @@ import LocalCuisine from "../images/KayanFotolar/LocalCuisine.jpg";
 import ReligiousIstanbul from "../images/KayanFotolar/ReligiousIstanbul.jpg";
 import seafood from "../images/KayanFotolar/seafood.jpg";
 import SpiceBazaar from "../images/KayanFotolar/SpiceBazaar.jpg";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
-import CataDeVino from "../images/Carousel/CataDeVino.jpg";
-import CeramoniaDeLosDerviches from "../images/Carousel/CeramoniaDeLosDerviches.jpg";
-import ClaseDeCocinaPrivada from "../images/Carousel/ClaseDeCocinaPrivada.jpg";
-import CulinariosDeEstambul from "../images/Carousel/CulinariosDeEstambul.jpg";
-import DesayunaConLosGlobos from "../images/Carousel/DesayunaConLosGlobos.jpg";
-import ExperienciaDeBicicletaEnCapadocia from "../images/Carousel/ExperienciaDeBicicletaEnCapadocia.jpg";
-import ExperienciaDeBañoTurco from "../images/Carousel/ExperienciaDeBañoTurco.jpg";
-import HelicopteroViajePorEncimaDeEstambul from "../images/Carousel/HelicopteroViajePorEncimaDeEstambul.png";
-import ViajeEnGoleta from "../images/Carousel/ViajeEnGoleta.jpg";
-import VisitaPrivadaDelAzoteaDeGranBazar from "../images/Carousel/VisitaPrivadaDelAzoteaDeGranBazar.jpeg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
 import Dilara from "../images/WhoWeAre/Dilara.png";
 import Ugur from "../images/WhoWeAre/Ugur.png";
 import InstagramContent from "../components/InstagramContent";
 import ContactForm from "../components/ContactForm";
+import ImageSlider from "../components/ImageSlider";
+import ImageSlider2 from "../components/ImageSlider2";
+import ImageSlider3 from "../components/ImageSlider3";
 
 const InstagramData = [
   {
@@ -51,7 +31,7 @@ const InstagramData = [
     description:
       "Swissotel The Bosphorus, Istanbul is a five-star luxury hotel right in the centre of Istanbul on the European banks of the Bosphorus. Nestled within 65 acres of historical gardens with world-class shopping and vibrant nightlife nearby, it offers 566 guest rooms and suites, featuring state-of-the-art technology and exclusive amenities.",
     image:
-      "https://www.instagram.com/p/DC6QTwjg-0S/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==",
+      "https://instagram.fist6-2.fna.fbcdn.net/v/t51.2885-15/468716180_18009347114665240_4766186843765991480_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi44NTN4NTY5LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fist6-2.fna.fbcdn.net&_nc_cat=104&_nc_ohc=cGB-Lr0mALYQ7kNvgEctQ9x&_nc_gid=7d3f0bf4575c4590ac3aa61dc27fa4dc&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=MzUxMTE5MDU3NzM5ODA4MDAyNA%3D%3D.3-ccb7-5&oh=00_AYC4NTr_0AliUqIMW7otKaBqxs_mOD3BYbEdaAiZk76f4Q&oe=678172A8&_nc_sid=7a9f4b",
     href: "https://www.instagram.com/p/DC6QTwjg-0S/?img_index=1",
   },
   {
@@ -158,127 +138,14 @@ export default function PageContent() {
 
       {/* What We Offer */}
       <section className="max-w-7xl">
-        <div className="py-40  mx-auto px-4 sm:px-6 lg:px-8 bg-[#FAFAFA]">
-          <div className="text-center">
-            <h5 className="text-lg font-bold text-[#98B8DF]">
-              ¿QUE OFRECEMOS?
-            </h5>
-            <CarouselProvider
-              naturalSlideWidth={500}
-              naturalSlideHeight={500}
-              totalSlides={5}
-              className="max-w-7xl mx-auto"
-              infinite={true}
-            >
-              <ButtonBack>
-                <FontAwesomeIcon
-                  icon={faChevronLeft}
-                  size="3x"
-                  className="hover:text-[#737373] z-10"
-                />
-              </ButtonBack>
-              <ButtonNext>
-                <FontAwesomeIcon
-                  icon={faChevronRight}
-                  size="3x"
-                  className="hover:text-[#737373] z-10"
-                />
-              </ButtonNext>
-              <Slider>
-                <Slide index={0}>
-                  <img src={CataDeVino} alt="CataDeVino" />
-                  <div className="text-xl font-bold z-10">Cata de Vino</div>
-                </Slide>
-                <Slide index={1}>
-                  <img
-                    src={CeramoniaDeLosDerviches}
-                    alt="CeramoniaDeLosDerviches"
-                  />
-                </Slide>
-                <Slide index={2}>
-                  <img src={ClaseDeCocinaPrivada} alt="ClaseDeCocinaPrivada" />
-                </Slide>
-                <Slide index={3}>
-                  <img src={CulinariosDeEstambul} alt="CulinariosDeEstambul" />
-                </Slide>
-                <Slide index={4}>
-                  <img src={DesayunaConLosGlobos} alt="DesayunaConLosGlobos" />
-                </Slide>
-              </Slider>
-            </CarouselProvider>
-          </div>
+        <div className="py-40 my-40 mx-auto px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] text-center">
+          <ImageSlider />
         </div>
       </section>
 
       {/* Carousel */}
-      <section>
-        <CarouselProvider
-          naturalSlideWidth={200}
-          naturalSlideHeight={125}
-          totalSlides={10}
-          className="max-w-7xl mx-auto"
-          infinite={true}
-        >
-          <Slider>
-            <Slide index={0}>
-              <img src={CataDeVino} alt="CataDeVino" />
-              <div className="text-xl font-bold z-10">Cata de Vino</div>
-            </Slide>
-            <Slide index={1}>
-              <img
-                src={CeramoniaDeLosDerviches}
-                alt="CeramoniaDeLosDerviches"
-              />
-            </Slide>
-            <Slide index={2}>
-              <img src={ClaseDeCocinaPrivada} alt="ClaseDeCocinaPrivada" />
-            </Slide>
-            <Slide index={3}>
-              <img src={CulinariosDeEstambul} alt="CulinariosDeEstambul" />
-            </Slide>
-            <Slide index={4}>
-              <img src={DesayunaConLosGlobos} alt="DesayunaConLosGlobos" />
-            </Slide>
-            <Slide index={5}>
-              <img src={ExperienciaDeBañoTurco} alt="ExperienciaDeBañoTurco" />
-            </Slide>
-            <Slide index={6}>
-              <img
-                src={ExperienciaDeBicicletaEnCapadocia}
-                alt="ExperienciaDeBicicletaEnCapadocia"
-              />
-            </Slide>
-            <Slide index={7}>
-              <img
-                src={HelicopteroViajePorEncimaDeEstambul}
-                alt="HelicopteroViajePorEncimaDeEstambul"
-              />
-            </Slide>
-            <Slide index={8}>
-              <img src={ViajeEnGoleta} alt="ViajeEnGoleta" />
-            </Slide>
-            <Slide index={9}>
-              <img
-                src={VisitaPrivadaDelAzoteaDeGranBazar}
-                alt="VisitaPrivadaDelAzoteaDeGranBazar"
-              />
-            </Slide>
-          </Slider>
-          <ButtonBack>
-            <FontAwesomeIcon
-              icon={faChevronLeft}
-              size="3x"
-              className="hover:text-[#737373] z-10"
-            />
-          </ButtonBack>
-          <ButtonNext>
-            <FontAwesomeIcon
-              icon={faChevronRight}
-              size="3x"
-              className="hover:text-[#737373] z-10"
-            />
-          </ButtonNext>
-        </CarouselProvider>
+      <section className="max-w-7xl">
+        <ImageSlider2 />
       </section>
 
       {/* Who we are */}
@@ -369,22 +236,14 @@ export default function PageContent() {
 
       {/* Comments */}
       <section className="py-20 bg-[#FAFAFA]">
-        <div className="flex flex-row mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-lg font-bold text-[#98B8DF]">
-              COMENTARIOS DE CLIENTES
-            </h2>
-            <h2 className="text-5xl font-bold text-[#39405A] pr-20">
-              Viajeros Satisfechos
-            </h2>
-          </div>
-          <InstagramContent post={InstagramData[0]} />
-        </div>
+        <ImageSlider3 />
       </section>
 
       {/* Contact Form */}
-      <section className="py-20">
-        <h2 className="text-lg font-bold text-[#98B8DF]">CONTÁCTANOS</h2>
+      <section className="py-20 flex flex-row">
+        <h2 className="text-lg font-bold text-[#98B8DF] -rotate-90">
+          CONTÁCTANOS
+        </h2>
         <ContactForm />
       </section>
     </div>

@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { Navbar } from "../components/Navbar";
 
 export default function Header() {
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Navbar */}
+      <Navbar />
+
       {/* Video */}
       <section className="relative h-screen">
         <video id="bannerVideo" autoPlay muted loop>
