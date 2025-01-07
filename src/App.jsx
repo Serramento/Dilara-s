@@ -6,7 +6,7 @@ import Footer from "./layout/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="font-lato">
       <Header />
       <PageContent />
       <Footer />

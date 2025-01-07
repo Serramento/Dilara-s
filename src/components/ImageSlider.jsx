@@ -67,35 +67,36 @@ const ImageSlider = () => {
     <FontAwesomeIcon
       icon={direction === "left" ? faChevronLeft : faChevronRight}
       size="xl"
-      className="hover:text-[#737373]"
+      className="text-[#737373] hover:text-white bg-[#98B8DF] p-6 rounded-full mr-5"
       onClick={handleClick}
     />
   );
 
   return (
-    <section className="flex justify-center items-center max-[639px]:pt-8">
-      <div>
-        <ArrowButton direction="left" handleClick={prevSlide} />
-        <ArrowButton direction="right" handleClick={nextSlide} />
-      </div>
+    <section className="flex justify-center items-center">
       {ImageSliderData.map((slide, index) => {
         return (
           <div key={index}>
             {index === current && (
-              <div className="flex flex-row">
-                <div className="w-60 mt-36 md:w-[50rem] md:text-left lg:mt-10">
+              <div className="flex flex-col justify-center items-center md:flex-row index-0">
+                <div className="index-0 ml-5 mt-24 md:mt-0 md:ml-0 md:-rotate-90">
+                  <ArrowButton direction="left" handleClick={prevSlide} />
+                  <ArrowButton direction="right" handleClick={nextSlide} />
+                </div>
+                <div className="w-72 mt-5 md:w-[26rem] md:mr-10 md:text-left md:mt-10 index-0">
                   <h5 className="text-lg font-bold text-[#98B8DF]">
                     ¿QUE OFRECEMOS?
                   </h5>
-                  <h2 className="text-5xl font-bold text-[#39405A] px-96">
-                    {slide.title}
-                  </h2>
-                  <h4 className="mt-4 text-lg text-[#C0BABA]">
-                    {slide.description}
-                  </h4>
+                  <div className="flex flex-col h-72 mt-24 md:mt-20 mb-5 md:items-left">
+                    <h2 className="text-3xl md:text-5xl font-bold text-[#39405A] italic">
+                      {slide.title}
+                    </h2>
+                    <h4 className="mt-4 text-lg text-[#C0BABA] index-0">
+                      {slide.description}
+                    </h4>
+                  </div>
                 </div>
-                ;
-                <div className="h-[50rem] w-[50rem]">
+                <div className="h-[15rem] w-[15rem] mb-10 index-0 ml-5 md:ml-0 md:mt-20">
                   <img
                     src={slide.image}
                     alt="travel image"

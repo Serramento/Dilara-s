@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper";
+import { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -52,16 +52,18 @@ const InstagramData = [
 
 export default function PageContent() {
   return (
-    <div>
+    <div className="max-w-md md:max-w-7xl">
       {/* About Us */}
-      <section>
-        <div className="py-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[#FAFAFA]">
-          <div className="text-center">
-            <h5 className="text-lg font-bold text-[#98B8DF]">SOBRE NOSOTROS</h5>
-            <h2 className="text-5xl font-bold text-[#39405A] px-96">
+      <section className="bg-[#FAFAFA] md:bg-white">
+        <div className="mx-10 py-20 md:py-24 md:my-0 md:mx-28 max-w-7xl px-4 sm:px-6 lg:px-8 bg-white md:bg-[#FAFAFA]">
+          <div className="text-center mx-5">
+            <h5 className="text-lg font-bold text-[#98B8DF] mb-20">
+              SOBRE NOSOTROS
+            </h5>
+            <h2 className="text-5xl mb-10 font-bold text-[#39405A] md:px-60 italic">
               Somos su Socia Local en Turquia
             </h2>
-            <p className="mt-4 text-lg text-[#C0BABA] px-48">
+            <p className="mt-4 text-lg text-[#C0BABA] md:px-24">
               Contarán con nosotros para crear sus itinerarios y poder dejar
               todo en manos de nuestro equipo dedicado y profesional. ¡Le
               aseguramos que nuestro apasionado equipo estará a su disposición
@@ -78,18 +80,21 @@ export default function PageContent() {
       {/* Kayan Fotolar */}
       <section>
         <Swiper
-          slidesPerView={5}
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 5,
+            },
+          }}
           autoplay={{
             delay: 1000,
             disableOnInteraction: false,
           }}
           speed={5000}
           loop={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay]}
         >
           <SwiperSlide>
             <img src={Alacati} alt="Alacati" />
@@ -137,14 +142,14 @@ export default function PageContent() {
       </section>
 
       {/* What We Offer */}
-      <section className="max-w-7xl">
-        <div className="py-40 my-40 mx-auto px-4 sm:px-6 lg:px-8 bg-[#FAFAFA] text-center">
+      <section className="max-w-md md:max-w-7xl">
+        <div className="md:bg-[#FAFAFA] md:mx-28 md:py-20 mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ImageSlider />
         </div>
       </section>
 
       {/* Carousel */}
-      <section className="max-w-7xl">
+      <section className="max-w-md md:max-w-7xl">
         <ImageSlider2 />
       </section>
 
@@ -152,18 +157,20 @@ export default function PageContent() {
       <section className="py-20 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h5 className="text-lg font-bold text-[#98B8DF]">
+            <h5 className="text-lg font-bold pb-24 text-[#98B8DF] md:text-left md:ml-36">
               ¿QUIENES SOMOS?
             </h5>
             <div>
-              <div className="flex flex-row">
-                <img src={Dilara} alt="Dilara" className="w-60" />
+              <div className="flex flex-col mb-24 px-5 items-center justify-center md:flex-row md:mx-20">
+                <img src={Dilara} alt="Dilara" className="w-60 mb-5 md:mr-10" />
                 <div>
-                  <h5 className="text-lg font-bold text-[#39405A]">
+                  <h5 className="text-lg font-bold text-[#39405A] md:text-left">
                     Dilara Bayramoglu
                   </h5>
-                  <p className="text-lg text-[#39405A]">Creativa de la Marca</p>
-                  <p className="mt-4 text-md text-[#C0BABA]">
+                  <p className="text-lg text-[#39405A] md:text-left italic">
+                    Creativa de la Marca
+                  </p>
+                  <p className="mt-3 text-md text-[#C0BABA] md:text-left">
                     ¡Hola! Soy Dilara. Me gradué del Liceo Francés Sainte
                     Pulchérie y termine mis estudios en la Universidad de
                     Istanbul sobre traducción Francés y Español.  Después de
@@ -185,14 +192,16 @@ export default function PageContent() {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row">
-                <img src={Ugur} alt="Ugur" className="w-60" />
+              <div className="flex flex-col items-center justify-center px-5 md:flex-row md:mx-20">
+                <img src={Ugur} alt="Ugur" className="w-60 mb-5 md:mr-10" />
                 <div>
-                  <h5 className="text-lg font-bold text-[#39405A]">
+                  <h5 className="text-lg font-bold text-[#39405A] md:text-left">
                     Ugur Kiyici
                   </h5>
-                  <p className="text-[#39405A] text-lg">Chief of Operations</p>
-                  <p className="mt-4 text-md text-[#C0BABA]">
+                  <p className="text-[#39405A] text-lg md:text-left italic">
+                    Chief of Operations
+                  </p>
+                  <p className="mt-3 text-md text-[#C0BABA] md:text-left">
                     ¡Hola! Soy Uğur.  Bienvenidos a mi rincón de mundo digital,
                     donde los daré una idea de quién soy y qué me motiva.Siempre
                     me ha apasionado el turismo y siempre es un camino lleno de
@@ -221,12 +230,17 @@ export default function PageContent() {
       {/* Instagram Posts */}
       <section className="py-20">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-24">
             <h2 className="text-lg font-bold text-[#98B8DF]">
               PUBLICACIONES DESTACADAS
             </h2>
           </div>
-          <div className="flex flex-row">
+          <div className="md:hidden flex flex-col items-center justify-center md:flex-row">
+            {InstagramData.slice(0, 2).map((post, index) => (
+              <InstagramContent key={index} post={post} />
+            ))}
+          </div>
+          <div className="hidden md:flex flex-row items-center justify-center">
             {InstagramData.slice(0, 3).map((post, index) => (
               <InstagramContent key={index} post={post} />
             ))}
@@ -240,11 +254,14 @@ export default function PageContent() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 flex flex-row">
-        <h2 className="text-lg font-bold text-[#98B8DF] -rotate-90">
+      <section className="flex flex-col md:flex-row items-center justify-center md:mb-10">
+        <h2 className="hidden mb-28 md:flex text-lg font-bold text-[#98B8DF] -rotate-90">
           CONTÁCTANOS
         </h2>
         <ContactForm />
+        <h2 className="md:hidden mb-36 text-lg font-bold text-[#98B8DF]">
+          CONTÁCTANOS
+        </h2>
       </section>
     </div>
   );

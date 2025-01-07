@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
+  faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import CataDeVino from "../images/Carousel/CataDeVino.jpg";
 import CeramoniaDeLosDerviches from "../images/Carousel/CeramoniaDeLosDerviches.jpg";
@@ -87,37 +88,49 @@ const ImageSlider2 = () => {
     <FontAwesomeIcon
       icon={direction === "left" ? faChevronLeft : faChevronRight}
       size="xl"
-      className="hover:text-[#737373]"
+      className="text-[#737373] hover:text-[#98B8DF] bg-white opacity-75 p-6 rounded-full"
       onClick={handleClick}
     />
   );
 
   return (
-    <section className="font-montserrat relative h-full flex justify-center items-center max-[639px]:pt-8">
-      <ArrowButton direction="left" handleClick={prevSlide} />
-
+    <section className="relative flex justify-center items-center index-0">
       {ImageSliderData2.map((slide, index) => {
         return (
           <div key={index}>
             {index === current && (
-              <div className="md:h-[30rem] md:w-[70rem] w-full h-full object-cover">
-                <div className="absolute w-60 mt-36 md:w-[50rem] md:text-left lg:mt-10">
-                  <h2 className="font-bold text-3xl text-[#FFFFFF] mt-5 md:text-5xl md:mt-10">
-                    {slide.title}
-                  </h2>
+              <div className="flex items-center justify-center md:w-screen relative h-screen md:h-[46rem] index-0">
+                <div className="flex flex-col absolute w-[23rem] md:w-[70rem] md:text-left lg:mt-10 index-0">
+                  <div className="flex justify-between index-0">
+                    <ArrowButton direction="left" handleClick={prevSlide} />
+                    <ArrowButton direction="right" handleClick={nextSlide} />
+                  </div>
+
+                  <div>
+                    <h2 className="font-bold text-4xl italic text-[#FFFFFF] mt-64 md:text-5xl md:mt-48">
+                      {slide.title}
+                    </h2>
+                    {/*<div className="flex flex-row ml-12 mt-5 text-white index-0 ">
+                      <FontAwesomeIcon
+                        icon={faLocationDot}
+                        className="h-6 opacity-75 mt-1"
+                      />
+                      <p className="text-lg md:text-2xl opacity-75 pl-2">
+                        Estambul
+                      </p>
+                    </div>*/}
+                  </div>
                 </div>
                 <img
                   src={slide.src}
                   alt={slide.alt}
-                  className="w-full h-full"
+                  className="w-full h-full object-cover"
                 />
               </div>
             )}
           </div>
         );
       })}
-
-      <ArrowButton direction="right" handleClick={nextSlide} />
     </section>
   );
 };

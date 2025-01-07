@@ -6,6 +6,9 @@ export default {
       screens: {
         md: "640px",
       },
+      fontFamily: {
+        lato: ["Lato", "sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

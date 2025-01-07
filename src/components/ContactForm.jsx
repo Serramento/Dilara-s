@@ -24,7 +24,6 @@ export default function ContactForm() {
     formState: { errors, isValid },
   } = useForm({
     defaultValues: {
-      id: nanoid(5), //5 karakterli
       name: "",
       email: "",
       subject: "",
@@ -35,8 +34,15 @@ export default function ContactForm() {
 
   const submitHandler = (data, event) => {
     handleContactSubmit({ ...data });
+    const sentData = {
+      name: data.name,
+      email: data.email,
+      subject: data.subject,
+      message: data.message,
+    };
+
     axiosInstance
-      .post("/signup", JSON.stringify(data), {
+      .post("/signup", JSON.stringify(sentData), {
         headers: { "Content-Type": "application/json" },
       })
       .then((response) => {
@@ -70,70 +76,82 @@ export default function ContactForm() {
 
   return (
     <>
-      <form className="taskForm" onSubmit={handleSubmit(submitHandler)}>
-        <div className="form-line">
-          <label className="input-label" htmlFor="name">
-            Nombre*
-          </label>
-          <input
-            className="input-text"
-            id="name"
-            type="text"
-            {...register("name", { validate: validateName })}
-          />
-          {<p className="input-error">{errors.name?.message}</p>}
+      <form
+        className="md:flex md:flex-row"
+        onSubmit={handleSubmit(submitHandler)}
+      >
+        <div>
+          <div className="mt-24 mb-8">
+            <input
+              className="w-80 md:w-[28rem] h-16 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
+              placeholder="Nombre*"
+              id="name"
+              type="text"
+              {...register("name", { validate: validateName })}
+            />
+            {
+              <p className="text-[#39405A] mt-2 text-sm text-left pl-2">
+                {errors.name?.message}
+              </p>
+            }
+          </div>
+
+          <div className="mb-8">
+            <input
+              className="w-80 md:w-[28rem] h-16 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
+              placeholder="Correo*"
+              id="email"
+              type="text"
+              {...register("email", {
+                required: true,
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message:
+                    "El valor ingresado no coincide con el formato de correo electrónico",
+                },
+              })}
+            />
+            <p className="text-[#39405A] mt-2 text-sm text-left pl-2">
+              {errors.email?.message}
+            </p>
+          </div>
+
+          <div className="mb-8">
+            <input
+              className="w-80 md:w-[28rem] h-16 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
+              placeholder="Sujeto*"
+              id="subject"
+              type="text"
+              {...register("subject", { validate: validateSubject })}
+            />
+            <p className="text-[#39405A] mt-2 text-sm text-left pl-2">
+              {errors.subject?.message}
+            </p>
+          </div>
         </div>
 
-        <div className="form-line">
-          <label className="input-label" htmlFor="email">
-            Correo*
-          </label>
-          <input
-            className="input-text"
-            id="email"
-            type="text"
-            {...register("email", {
-              required: true,
-              pattern: {
-                value: /\S+@\S+\.\S+/,
-                message:
-                  "El valor ingresado no coincide con el formato de correo electrónico",
-              },
-            })}
-          />
-          <p className="input-error">{errors.email?.message}</p>
-        </div>
+        <div className="md:mt-24 md:ml-10">
+          <div className="mb-8">
+            <textarea
+              className="w-80 pt-4 md:w-[28rem] h-48 md:h-64 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
+              placeholder="Mesaje*"
+              id="description"
+              {...register("message", { validate: validateMessage })}
+            ></textarea>
+            <p className="text-[#39405A] mt-2 text-sm text-left pl-2">
+              {errors.message?.message}
+            </p>
+          </div>
 
-        <div className="form-line">
-          <label className="input-label" htmlFor="subject">
-            Sujeto*
-          </label>
-          <input
-            className="input-text"
-            id="subject"
-            type="text"
-            {...register("subject", { validate: validateSubject })}
-          />
-          <p className="input-error">{errors.subject?.message}</p>
-        </div>
-
-        <div className="form-line">
-          <label className="input-label" htmlFor="message">
-            Mesaje*
-          </label>
-          <textarea
-            className="input-textarea"
-            rows="6"
-            id="description"
-            {...register("message", { validate: validateMessage })}
-          ></textarea>
-          <p className="input-error">{errors.message?.message}</p>
-        </div>
-
-        <div className="form-line">
-          <button className="submit-button" type="submit" disabled={!isValid}>
-            ENTREGAR
-          </button>
+          <div className="form-line">
+            <button
+              className="text-white bg-[#98B8DF] md:ml-72 mb-10 px-7 py-3 font-semibold"
+              type="submit"
+              disabled={!isValid}
+            >
+              ENTREGAR
+            </button>
+          </div>
         </div>
       </form>
     </>

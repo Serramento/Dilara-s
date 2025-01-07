@@ -8,10 +8,10 @@ export function Navbar() {
 
   return (
     <nav className="fixed w-full bg-black/6 backdrop-blur-md z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-24">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center w-36">
+            <Link href="/" className="w-44 md:w-36">
               <img src={DilarasLogo} alt="DilarasLogo" />
             </Link>
           </div>
@@ -19,7 +19,7 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
             <div>
-              <ul>
+              <ul className="flex flex-row">
                 <li>
                   <Link to="/hogar">
                     <div className="group inline-flex rounded-md h-10 w-max items-center justify-center text-[#FFFFFF] px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
@@ -75,25 +75,25 @@ export function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               href="/hogar"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#98B8DF] hover:bg-gray-50"
             >
               HOGAR
             </Link>
             <Link
               href="/sobreNosotros"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#98B8DF] hover:bg-gray-50"
             >
               SOBRE NOSOTROS
             </Link>
             <Link
               href="/servicios"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#98B8DF] hover:bg-gray-50"
             >
               SERVICIOS
             </Link>
             <Link
               href="/contacto"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#98B8DF] hover:bg-gray-50"
             >
               CONTACTO
             </Link>

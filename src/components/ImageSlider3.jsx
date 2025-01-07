@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
+  faClock,
 } from "@fortawesome/free-solid-svg-icons";
 
 const ImageSliderData3 = [
@@ -67,47 +68,48 @@ const ImageSlider3 = () => {
     <FontAwesomeIcon
       icon={direction === "left" ? faChevronLeft : faChevronRight}
       size="xl"
-      className="hover:text-[#737373]"
+      className="text-[#737373] hover:text-white bg-[#98B8DF] p-6 rounded-full mr-5"
       onClick={handleClick}
     />
   );
 
   return (
-    <section className="flex justify-center items-center max-[639px]:pt-8">
-      <div>
-        <ArrowButton direction="left" handleClick={prevSlide} />
-        <ArrowButton direction="right" handleClick={nextSlide} />
-      </div>
-      <div className="text-center mb-12">
+    <section className="flex flex-col md:flex-row justify-center items-center">
+      <div className="flex flex-col items-center justify-center md:items-start">
         <h2 className="text-lg font-bold text-[#98B8DF]">
           COMENTARIOS DE CLIENTES
         </h2>
-        <h2 className="text-5xl font-bold text-[#39405A] pr-20">
+        <h2 className="text-5xl font-bold mx-5 mt-24 text-[#39405A] mb-12 md:w-64 md:mx-0 md:text-left">
           Viajeros Satisfechos
         </h2>
+        <div className="ml-5 mb-10 md:m-0">
+          <ArrowButton direction="left" handleClick={prevSlide} />
+          <ArrowButton direction="right" handleClick={nextSlide} />
+        </div>
       </div>
+
       {ImageSliderData3.map((slide, index) => {
         return (
           <div key={index}>
             {index === current && (
-              <div className="flex flex-row">
-                <div className="shadow-md w-80 lg:w-65 bg-[#FAFAFA]">
-                  <div className="h-80 lg:h-65 relative">
+              <div className="flex flex-row md:ml-10">
+                <div className="shadow-md w-80 md:w-[40rem] bg-[#FAFAFA]">
+                  <div className="h-80 md:h-65 relative">
                     <img
                       src={slide.image}
                       className="w-full h-full object-cover "
                     />
                   </div>
                   <div className="m-7 text-left">
-                    <h4 className="text-xl font-semibold mt-3 text-[#98B8DF]">
-                      {slide.title}
-                    </h4>
                     <p className="text-[#C0BABA] text-sm font-semibold text-left mt-3">
                       {slide.description}
                     </p>
                     <div className="flex flex-row justify-between mt-7">
                       <div className="flex flex-row text-bluex">
-                        <i className="fa-regular fa-clock"></i>
+                        <FontAwesomeIcon
+                          icon={faClock}
+                          className="text-[#98B8DF]"
+                        />
                         <p className="text-[#C0BABA] text-xs font-semibold pl-1">
                           22 April 2021
                         </p>
@@ -118,16 +120,6 @@ const ImageSlider3 = () => {
                           10 comments
                         </p>
                       </div>
-                    </div>
-                    <div className="text-bluex">
-                      <button className="text-[#39405A] font-bold text-sm mt-7 pr-1 mb-10 lg:mb-3">
-                        Aprender Más
-                      </button>
-                      <FontAwesomeIcon
-                        icon={faChevronRight}
-                        size="sm"
-                        className="text-[#98B8DF] z-10"
-                      />
                     </div>
                   </div>
                 </div>
