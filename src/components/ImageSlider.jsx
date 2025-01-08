@@ -84,10 +84,11 @@ const ImageSlider = () => {
                   <ArrowButton direction="right" handleClick={nextSlide} />
                 </div>
                 <div className="w-72 mt-5 md:w-[26rem] md:mr-10 md:text-left md:mt-10 index-0">
-                  <h5 className="text-lg font-bold text-[#98B8DF]">
+                  <h5 className="text-lg font-bold text-[#98B8DF] mb-3">
                     ¿QUE OFRECEMOS?
                   </h5>
-                  <div className="flex flex-col h-72 mt-24 md:mt-20 mb-5 md:items-left">
+                  <div className="vertical-line2 md:ml-20 mb-1"></div>
+                  <div className="flex flex-col h-72 mb-5 md:items-left">
                     <h2 className="text-3xl md:text-5xl font-bold text-[#39405A] italic">
                       {slide.title}
                     </h2>

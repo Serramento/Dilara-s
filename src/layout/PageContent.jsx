@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import "swiper/css";
@@ -50,16 +50,17 @@ const InstagramData = [
   },
 ];
 
-export default function PageContent() {
+export default function PageContent(props) {
   return (
     <div className="max-w-md md:max-w-7xl">
       {/* About Us */}
-      <section className="bg-[#FAFAFA] md:bg-white">
+      <section className="bg-[#FAFAFA] md:bg-white" ref={props.aboutUsRef}>
         <div className="mx-10 py-20 md:py-24 md:my-0 md:mx-28 max-w-7xl px-4 sm:px-6 lg:px-8 bg-white md:bg-[#FAFAFA]">
           <div className="text-center mx-5">
-            <h5 className="text-lg font-bold text-[#98B8DF] mb-20">
+            <h5 className="text-lg font-bold text-[#98B8DF] mb-3">
               SOBRE NOSOTROS
             </h5>
+            <div className="vertical-line2 mb-1"></div>
             <h2 className="text-5xl mb-10 font-bold text-[#39405A] md:px-60 italic">
               Somos su Socia Local en Turquia
             </h2>
@@ -142,7 +143,7 @@ export default function PageContent() {
       </section>
 
       {/* What We Offer */}
-      <section className="max-w-md md:max-w-7xl">
+      <section className="max-w-md md:max-w-7xl" ref={props.servicesRef}>
         <div className="md:bg-[#FAFAFA] md:mx-28 md:py-20 mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ImageSlider />
         </div>
@@ -157,11 +158,12 @@ export default function PageContent() {
       <section className="py-20 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h5 className="text-lg font-bold pb-24 text-[#98B8DF] md:text-left md:ml-36">
+            <h5 className="text-lg font-bold pb-3 text-[#98B8DF] md:text-left md:ml-36">
               ¿QUIENES SOMOS?
             </h5>
+            <div className="vertical-line2 mb-1 md:ml-56"></div>
             <div>
-              <div className="flex flex-col mb-24 px-5 items-center justify-center md:flex-row md:mx-20">
+              <div className="flex flex-col mb-3 px-5 items-center justify-center md:flex-row md:mx-20">
                 <img src={Dilara} alt="Dilara" className="w-60 mb-5 md:mr-10" />
                 <div>
                   <h5 className="text-lg font-bold text-[#39405A] md:text-left">
@@ -192,6 +194,7 @@ export default function PageContent() {
                   </p>
                 </div>
               </div>
+              <div className="vertical-line2 mb-1 md:ml-56"></div>
               <div className="flex flex-col items-center justify-center px-5 md:flex-row md:mx-20">
                 <img src={Ugur} alt="Ugur" className="w-60 mb-5 md:mr-10" />
                 <div>
@@ -230,10 +233,11 @@ export default function PageContent() {
       {/* Instagram Posts */}
       <section className="py-20">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-24">
-            <h2 className="text-lg font-bold text-[#98B8DF]">
+          <div className="text-center mb-3">
+            <h2 className="text-lg font-bold mb-3 text-[#98B8DF]">
               PUBLICACIONES DESTACADAS
             </h2>
+            <div className="vertical-line2 mb-1"></div>
           </div>
           <div className="md:hidden flex flex-col items-center justify-center md:flex-row">
             {InstagramData.slice(0, 2).map((post, index) => (
@@ -254,14 +258,21 @@ export default function PageContent() {
       </section>
 
       {/* Contact Form */}
-      <section className="flex flex-col md:flex-row items-center justify-center md:mb-10">
-        <h2 className="hidden mb-28 md:flex text-lg font-bold text-[#98B8DF] -rotate-90">
-          CONTÁCTANOS
-        </h2>
+      <section
+        className="flex flex-col md:flex-row items-center justify-center"
+        ref={props.contactRef}
+      >
+        <div className="hidden md:flex flex-col mt-40 bottom-0">
+          <h2 className="text-lg font-bold text-[#98B8DF] -rotate-90">
+            CONTÁCTANOS
+          </h2>
+          <div className="vertical-line3 mt-16"></div>
+        </div>
         <ContactForm />
-        <h2 className="md:hidden mb-36 text-lg font-bold text-[#98B8DF]">
+        <h2 className="md:hidden mb-3 text-lg font-bold text-[#98B8DF]">
           CONTÁCTANOS
         </h2>
+        <div className="md:hidden vertical-line2"></div>
       </section>
     </div>
   );

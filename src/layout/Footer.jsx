@@ -9,20 +9,33 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Footer() {
+export default function Footer(props) {
   return (
     <div className="max-w-md md:max-w-7xl">
       {/* Contact Info */}
-      <section className="py-20 bg-primary text-white bg-[#98B8DF]">
+      <section className="pb-20 md:pt-0 md:pb-5 text-white bg-[#98B8DF]">
         <div className="max-w-7xl flex flex-col items-center justify-center md:flex-row mx-auto px-4 sm:px-6 lg:px-8 text-left">
-          <Link href="/" className="items-center w-44 mt-24 mb-16 md:mr-24">
-            <img src={DilarasLogo} alt="DilarasLogo" />
-          </Link>
-          <div className="space-y-4 mb-16 md:mr-24">
+          <div className="flex flex-col items-center justify-center md:pl-2">
+            <div className="vertical-line mt-0 md:mr-64"></div>
+            <Link
+              href="/"
+              className="w-44 mt-5 mb-16 md:mb-36 md:mr-24"
+              onClick={() =>
+                window.scrollTo({
+                  top: props.homeRef.current.offsetTop,
+                  behavior: "smooth",
+                })
+              }
+            >
+              <img src={DilarasLogo} alt="DilarasLogo" />
+            </Link>
+          </div>
+
+          <div className="space-y-4 mb-16 md:mr-24 md:space-y-6 md:mb-0">
             <h3 className="text-lg font-semibold text-center md:text-left">
               Ponte en Contacto
             </h3>
-            <ul className="space-y-2 text-white ">
+            <ul className="space-y-2 text-white md:space-y-4">
               <div className="flex flex-row w-64">
                 <FontAwesomeIcon icon={faPhone} className="h-6 mt-1 mr-2" />
                 <li>+90 216 326 58 56</li>
@@ -58,8 +71,8 @@ export default function Footer() {
 
       {/* Footer */}
       <section>
-        <div className="pt-8 border-t bg-[#39405A]">
-          <div className="flex flex-col max-w-7xl md:flex-row justify-between items-center gap-4">
+        <div className="bg-[#39405A] py-6 pl-8 md:pr-8">
+          <div className="flex flex-col max-w-7xl md:flex-row items-start md:items-center md:justify-between gap-2">
             <p className="text-white">
               © {new Date().getFullYear()} Earthlight Travel. All rights
               reserved.
