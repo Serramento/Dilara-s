@@ -1,6 +1,5 @@
 import Goleta from "../images/Goleta.mp4";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import DilarasLogo from "../images/DilarasLogo.png";
 
@@ -8,19 +7,15 @@ export default function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      className="flex flex-col min-h-screen max-w-md md:max-w-7xl"
-      ref={props.homeRef}
-    >
+    <div className="max-w-md md:max-w-7xl" ref={props.homeRef}>
       {/* Navbar */}
-      <section className="flex justify-center">
-        <nav className="fixed w-full bg-black/10 backdrop-blur-md z-50">
-          <div className="max-w-md md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-24">
+      <section className="w-screen">
+        <nav className="fixed w-full top-0 left-0 bg-black/10 backdrop-blur-md z-50">
+          <div className="px-4 md:px-20">
+            <div className="flex justify-between h-28">
               <div className="flex items-center">
-                <Link
-                  href="/"
-                  className="w-44 md:w-36"
+                <button
+                  className="w-44"
                   onClick={() =>
                     window.scrollTo({
                       top: props.homeRef.current.offsetTop,
@@ -29,7 +24,7 @@ export default function Header(props) {
                   }
                 >
                   <img src={DilarasLogo} alt="DilarasLogo" />
-                </Link>
+                </button>
               </div>
 
               {/* Desktop Navigation */}
@@ -37,8 +32,7 @@ export default function Header(props) {
                 <div>
                   <ul className="flex flex-row">
                     <li>
-                      <Link
-                        to="/"
+                      <button
                         onClick={() =>
                           window.scrollTo({
                             top: props.homeRef.current.offsetTop,
@@ -49,11 +43,10 @@ export default function Header(props) {
                         <div className="group inline-flex rounded-md h-10 w-max items-center justify-center text-[#FFFFFF] px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
                           HOGAR
                         </div>
-                      </Link>
+                      </button>
                     </li>
                     <li>
-                      <Link
-                        to="/"
+                      <button
                         onClick={() =>
                           window.scrollTo({
                             top: props.aboutUsRef.current.offsetTop,
@@ -64,11 +57,10 @@ export default function Header(props) {
                         <div className="group inline-flex rounded-md h-10 w-max items-center justify-center text-[#FFFFFF] px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
                           SOBRE NOSOTROS
                         </div>
-                      </Link>
+                      </button>
                     </li>
                     <li>
-                      <Link
-                        to="/"
+                      <button
                         onClick={() =>
                           window.scrollTo({
                             top: props.servicesRef.current.offsetTop,
@@ -79,11 +71,10 @@ export default function Header(props) {
                         <div className="group inline-flex rounded-md h-10 w-max items-center justify-center text-[#FFFFFF] px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
                           SERVICIOS
                         </div>
-                      </Link>
+                      </button>
                     </li>
                     <li>
-                      <Link
-                        to="/"
+                      <button
                         onClick={() =>
                           window.scrollTo({
                             top: props.contactRef.current.offsetTop,
@@ -94,7 +85,7 @@ export default function Header(props) {
                         <div className="group inline-flex rounded-md h-10 w-max items-center justify-center text-[#FFFFFF] px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50">
                           CONTACTO
                         </div>
-                      </Link>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -121,8 +112,7 @@ export default function Header(props) {
           {isOpen && (
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <Link
-                  href="/"
+                <button
                   className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#98B8DF] hover:bg-gray-50"
                   onClick={() =>
                     window.scrollTo({
@@ -132,9 +122,8 @@ export default function Header(props) {
                   }
                 >
                   HOGAR
-                </Link>
-                <Link
-                  href="/"
+                </button>
+                <button
                   className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#98B8DF] hover:bg-gray-50"
                   onClick={() =>
                     window.scrollTo({
@@ -144,9 +133,8 @@ export default function Header(props) {
                   }
                 >
                   SOBRE NOSOTROS
-                </Link>
-                <Link
-                  href="/"
+                </button>
+                <button
                   className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#98B8DF] hover:bg-gray-50"
                   onClick={() =>
                     window.scrollTo({
@@ -156,9 +144,8 @@ export default function Header(props) {
                   }
                 >
                   SERVICIOS
-                </Link>
-                <Link
-                  href="/"
+                </button>
+                <button
                   className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#98B8DF] hover:bg-gray-50"
                   onClick={() =>
                     window.scrollTo({
@@ -168,7 +155,7 @@ export default function Header(props) {
                   }
                 >
                   CONTACTO
-                </Link>
+                </button>
               </div>
             </div>
           )}
@@ -176,7 +163,7 @@ export default function Header(props) {
       </section>
 
       {/* Video */}
-      <section className="relative h-screen md:h-[46rem]">
+      <section className="relative w-screen h-screen md:h-[46rem]">
         <video
           src={Goleta}
           id="bannerVideo"
@@ -195,7 +182,7 @@ export default function Header(props) {
               <div className="vertical-line mb-1"></div>
             </div>
             <div className="relative mx-12 md:ml-64 bottom-20">
-              <h1 className="text-4xl text-left md:text-right md:text-6xl font-bold opacity- italic leading-normal">
+              <h1 className="text-4xl text-left md:text-right md:text-6xl font-bold opacity-90 italic leading-normal">
                 La Bahía Escondida en el Mar Egeo
               </h1>
             </div>

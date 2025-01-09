@@ -55,13 +55,13 @@ export default function PageContent(props) {
     <div className="max-w-md md:max-w-7xl">
       {/* About Us */}
       <section className="bg-[#FAFAFA] md:bg-white" ref={props.aboutUsRef}>
-        <div className="mx-10 py-20 md:py-24 md:my-0 md:mx-28 max-w-7xl px-4 sm:px-6 lg:px-8 bg-white md:bg-[#FAFAFA]">
-          <div className="text-center mx-5">
+        <div className="max-w-7xl px-4 md:px-0 ">
+          <div className="text-center mx-5 md:mx-0 bg-white md:bg-[#FAFAFA] px-5 md:px-0 py-20 md:py-24 md:w-screen">
             <h5 className="text-lg font-bold text-[#98B8DF] mb-3">
               SOBRE NOSOTROS
             </h5>
             <div className="vertical-line2 mb-1"></div>
-            <h2 className="text-5xl mb-10 font-bold text-[#39405A] md:px-60 italic">
+            <h2 className="text-5xl mb-10 font-bold text-[#39405A] italic">
               Somos su Socia Local en Turquia
             </h2>
             <p className="mt-4 text-lg text-[#C0BABA] md:px-24">
@@ -79,7 +79,7 @@ export default function PageContent(props) {
       </section>
 
       {/* Kayan Fotolar */}
-      <section>
+      <section className="w-screen">
         <Swiper
           breakpoints={{
             0: {
@@ -143,8 +143,8 @@ export default function PageContent(props) {
       </section>
 
       {/* What We Offer */}
-      <section className="max-w-md md:max-w-7xl" ref={props.servicesRef}>
-        <div className="md:bg-[#FAFAFA] md:mx-28 md:py-20 mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="max-w-md md:max-w-7xl " ref={props.servicesRef}>
+        <div className="md:bg-[#FAFAFA] w-screen md:mx-0 md:py-20 mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ImageSlider />
         </div>
       </section>
@@ -155,7 +155,7 @@ export default function PageContent(props) {
       </section>
 
       {/* Who we are */}
-      <section className="py-20 bg-[#FAFAFA]">
+      <section className="py-20 bg-[#FAFAFA] w-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h5 className="text-lg font-bold pb-3 text-[#98B8DF] md:text-left md:ml-36">
@@ -231,7 +231,7 @@ export default function PageContent(props) {
       </section>
 
       {/* Instagram Posts */}
-      <section className="py-20">
+      <section className="py-20 w-screen">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-3">
             <h2 className="text-lg font-bold mb-3 text-[#98B8DF]">
@@ -253,13 +253,13 @@ export default function PageContent(props) {
       </section>
 
       {/* Comments */}
-      <section className="py-20 bg-[#FAFAFA]">
+      <section className="py-20 bg-[#FAFAFA] w-screen">
         <ImageSlider3 />
       </section>
 
       {/* Contact Form */}
       <section
-        className="flex flex-col md:flex-row items-center justify-center"
+        className="flex flex-col md:flex-row items-center justify-center w-screen"
         ref={props.contactRef}
       >
         <div className="hidden md:flex flex-col mt-40 bottom-0">

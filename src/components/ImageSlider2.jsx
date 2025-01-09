@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
-  faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import CataDeVino from "../images/Carousel/CataDeVino.jpg";
 import CeramoniaDeLosDerviches from "../images/Carousel/CeramoniaDeLosDerviches.jpg";
@@ -94,31 +93,21 @@ const ImageSlider2 = () => {
   );
 
   return (
-    <section className="relative flex justify-center items-center index-0">
+    <section>
       {ImageSliderData2.map((slide, index) => {
         return (
           <div key={index}>
             {index === current && (
-              <div className="flex items-center justify-center md:w-screen relative h-screen md:h-[46rem] index-0">
-                <div className="flex flex-col absolute w-[23rem] md:w-[70rem] md:text-left lg:mt-10 index-0">
+              <div className="flex items-center justify-center w-screen relative h-screen md:h-[46rem] index-0">
+                <div className="flex flex-col absolute w-[23rem] md:w-[70rem] md:text-left md:mt-10 index-0">
                   <div className="flex justify-between index-0">
                     <ArrowButton direction="left" handleClick={prevSlide} />
                     <ArrowButton direction="right" handleClick={nextSlide} />
                   </div>
-
                   <div>
                     <h2 className="font-bold text-4xl italic text-[#FFFFFF] mt-64 md:text-5xl md:mt-48">
                       {slide.title}
                     </h2>
-                    {/*<div className="flex flex-row ml-12 mt-5 text-white index-0 ">
-                      <FontAwesomeIcon
-                        icon={faLocationDot}
-                        className="h-6 opacity-75 mt-1"
-                      />
-                      <p className="text-lg md:text-2xl opacity-75 pl-2">
-                        Estambul
-                      </p>
-                    </div>*/}
                   </div>
                 </div>
                 <img

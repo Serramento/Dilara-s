@@ -13,7 +13,7 @@ export default function Footer(props) {
   return (
     <div className="max-w-md md:max-w-7xl">
       {/* Contact Info */}
-      <section className="pb-20 md:pt-0 md:pb-5 text-white bg-[#98B8DF]">
+      <section className="pb-20 md:pt-0 md:pb-5 text-white bg-[#98B8DF] w-screen">
         <div className="max-w-7xl flex flex-col items-center justify-center md:flex-row mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <div className="flex flex-col items-center justify-center md:pl-2">
             <div className="vertical-line mt-0 md:mr-64"></div>
@@ -71,7 +71,7 @@ export default function Footer(props) {
 
       {/* Footer */}
       <section>
-        <div className="bg-[#39405A] py-6 pl-8 md:pr-8">
+        <div className="bg-[#39405A] py-6 pl-8 md:pr-8 w-screen">
           <div className="flex flex-col max-w-7xl md:flex-row items-start md:items-center md:justify-between gap-2">
             <p className="text-white">
               © {new Date().getFullYear()} Earthlight Travel. All rights
