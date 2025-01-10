@@ -5,18 +5,18 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Alacati from "../images/KayanFotolar/Alacati.jpg";
-import BicycleAlacati from "../images/KayanFotolar/BicycleAlacati.jpg";
-import blueVoyage from "../images/KayanFotolar/blueVoyage.jpg";
-import Bodrum from "../images/KayanFotolar/Bodrum.jpg";
 import CappadociaLandscape from "../images/KayanFotolar/CappadociaLandscape.jpg";
 import cappadociaReligiousHistory from "../images/KayanFotolar/cappadociaReligiousHistory.jpg";
 import EphesusCelsiusLibrary from "../images/KayanFotolar/EphesusCelsiusLibrary.jpg";
 import EphesusRuins from "../images/KayanFotolar/EphesusRuins.jpg";
 import HouseofVirginMary from "../images/KayanFotolar/HouseofVirginMary.jpg";
-import LocalCuisine from "../images/KayanFotolar/LocalCuisine.jpg";
-import ReligiousIstanbul from "../images/KayanFotolar/ReligiousIstanbul.jpg";
-import seafood from "../images/KayanFotolar/seafood.jpg";
 import SpiceBazaar from "../images/KayanFotolar/SpiceBazaar.jpg";
+import HagiaSophia from "../images/KayanFotolar/HagiaSophia.jpg";
+import TurkishFood from "../images/KayanFotolar/TurkishFood.jpg";
+import KariyeMuseum from "../images/KayanFotolar/KariyeMuseum.jpg";
+import Gulet from "../images/KayanFotolar/Gulet.jpg";
+import Marmaris from "../images/KayanFotolar/Marmaris.jpg";
+import Bodrum from "../images/KayanFotolar/Bodrum.png";
 import Dilara from "../images/WhoWeAre/Dilara.png";
 import Ugur from "../images/WhoWeAre/Ugur.png";
 import InstagramContent from "../components/InstagramContent";
@@ -30,22 +30,18 @@ const InstagramData = [
     title: "Swissotel The Bosphorus",
     description:
       "Swissotel The Bosphorus, Istanbul is a five-star luxury hotel right in the centre of Istanbul on the European banks of the Bosphorus. Nestled within 65 acres of historical gardens with world-class shopping and vibrant nightlife nearby, it offers 566 guest rooms and suites, featuring state-of-the-art technology and exclusive amenities.",
-    image:
-      "https://instagram.fist6-2.fna.fbcdn.net/v/t51.2885-15/468716180_18009347114665240_4766186843765991480_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi44NTN4NTY5LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fist6-2.fna.fbcdn.net&_nc_cat=104&_nc_ohc=cGB-Lr0mALYQ7kNvgEctQ9x&_nc_gid=7d3f0bf4575c4590ac3aa61dc27fa4dc&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=MzUxMTE5MDU3NzM5ODA4MDAyNA%3D%3D.3-ccb7-5&oh=00_AYC4NTr_0AliUqIMW7otKaBqxs_mOD3BYbEdaAiZk76f4Q&oe=678172A8&_nc_sid=7a9f4b",
     href: "https://www.instagram.com/p/DC6QTwjg-0S/?img_index=1",
   },
   {
     title: "Istanbul, Turkiye",
     description:
       "Anchored on the European shores of the Bosphorus strait in a historical building from the 1930’s, Shangri-La Bosphorus sits in the Beşiktaş district and is only a 15 minute walk from the iconic Dolmabahçe Palace. Guests will find solace in chandelier-accented rooms and suites accentuated by soothing cool tones, inspired by palatial...",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
     href: "https://www.instagram.com/reel/DBGqTa5AMu9/",
   },
   {
     title: "Rixos Tersane Istanbul",
     description:
       "Nestled along the Haliç, Rixos Tersane Istanbul epitomises unmatched guest experiences and service excellence. Dedicated to redefining Istanbul’s lifestyle scene, the hotel is an eclectic fusion, creating an urban hotspot and lifestyle hub with panoramic views of the Haliç. Situated in Istanbul’s historic Tersane district along the Golden Horn...",
-    image: "https://images.unsplash.com/photo-1587595431973-160d0d94add1",
     href: "https://www.instagram.com/p/DAGe8iyoIJ0/?img_index=1",
   },
 ];
@@ -98,13 +94,22 @@ export default function PageContent(props) {
           modules={[Autoplay]}
         >
           <SwiperSlide>
+            <img src={HagiaSophia} alt="HagiaSophia" />
+          </SwiperSlide>
+          <SwiperSlide>
             <img src={Alacati} alt="Alacati" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={BicycleAlacati} alt="BicycleAlacati" />
+            <img src={Bodrum} alt="Bodrum" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={blueVoyage} alt="blueVoyage" />
+            <img src={Marmaris} alt="Marmaris" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={Gulet} alt="Gulet" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={TurkishFood} alt="TurkishFood" />
           </SwiperSlide>
           <SwiperSlide>
             <img src={Bodrum} alt="Bodrum" />
@@ -122,19 +127,13 @@ export default function PageContent(props) {
             <img src={EphesusCelsiusLibrary} alt="EphesusCelsiusLibrary" />
           </SwiperSlide>
           <SwiperSlide>
+            <img src={KariyeMuseum} alt="KariyeMuseum" />
+          </SwiperSlide>
+          <SwiperSlide>
             <img src={EphesusRuins} alt="EphesusRuins" />
           </SwiperSlide>
           <SwiperSlide>
             <img src={HouseofVirginMary} alt="HouseofVirginMary" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={LocalCuisine} alt="LocalCuisine" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={ReligiousIstanbul} alt="ReligiousIstanbul" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={seafood} alt="seafood" />
           </SwiperSlide>
           <SwiperSlide>
             <img src={SpiceBazaar} alt="SpiceBazaar" />

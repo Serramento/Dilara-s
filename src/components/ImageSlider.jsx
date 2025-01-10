@@ -4,46 +4,53 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import AmpliaConexionesLocales from "../images/WhatWeOffer/AmpliaConexionesLocales.jpeg";
+import ApoyoenDestino from "../images/WhatWeOffer/ApoyoenDestino.jpeg";
+import FacilidaddeReserva from "../images/WhatWeOffer/FacilidaddeReserva.jpeg";
+import Flexibidad from "../images/WhatWeOffer/Flexibidad.jpeg";
+import ImmersionLocal from "../images/WhatWeOffer/ImmersionLocal.jpeg";
+import IntegraciondeTecnologia from "../images/WhatWeOffer/IntegraciondeTecnologia.jpeg";
+import Personalizacion from "../images/WhatWeOffer/Personalizacion.jpeg";
 
 const ImageSliderData = [
   {
     title: "Flexibilidad",
     description:
       "Creamos que ser flexible es el clave para retener y atraer talento humano aumentar la productividad. somos amantes de lo que hacemos y diseñamos su itinerario de forma flexible.",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
+    src: Flexibidad,
   },
   {
     title: "Personalización",
     description:
       "Trabajamos en base a sus gustos, preferencias y necesidades, asegurándose de que el viaje sea personalizado para ustedes.",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
+    src: Personalizacion,
   },
   {
     title: "Immersión Local",
     description: "Ofrecemos ofertas exclusivas y descuentos.",
-    image: "https://images.unsplash.com/photo-1587595431973-160d0d94add1",
+    src: ImmersionLocal,
   },
   {
     title: "Facilidad de Reserva",
     description: "Somos accesibles.",
-    image: "https://images.unsplash.com/photo-1587595431973-160d0d94add1",
+    src: FacilidaddeReserva,
   },
   {
-    title: " Apoyo en Destino (24_7)",
+    title: "Apoyo en Destino (24_7)",
     description:
       "Brindamos asistencia y apoyo durante todo el viaje, esperando que esto los brinda tranquilidad y seguridad durante su estancia en Turquía. Estamos pendientes para cualquier cosa cuando están en destino.",
-    image: "https://images.unsplash.com/photo-1587595431973-160d0d94add1",
+    src: ApoyoenDestino,
   },
   {
     title: "Integración de Tecnología",
     description:
       "Usamos el plataforma Axus y nuestros itinerarios siempre son en español, portugués o ingles. Creamos código de barras según preferencia.",
-    image: "https://images.unsplash.com/photo-1587595431973-160d0d94add1",
+    src: IntegraciondeTecnologia,
   },
   {
     title: "Amplia Conexiones Locales (guia en Español, experiencias etc.)",
     description: "Contamos con experiencia y conocimiento en la industria.",
-    image: "https://images.unsplash.com/photo-1587595431973-160d0d94add1",
+    src: AmpliaConexionesLocales,
   },
 ];
 
@@ -97,11 +104,11 @@ const ImageSlider = () => {
                     </h4>
                   </div>
                 </div>
-                <div className="h-[15rem] w-[15rem] mb-10 index-0 ml-5 md:ml-0 md:mt-20">
+                <div className="h-[15rem] w-[15rem] md:h-[20rem] md:w-[20rem] mb-20 md:mb-10 index-0 ml-5 md:ml-0 md:mt-20">
                   <img
-                    src={slide.image}
+                    src={slide.src}
                     alt="travel image"
-                    className="w-full h-full rounded-full"
+                    className="w-full h-full object-cover rounded-full"
                   />
                 </div>
               </div>

@@ -7,18 +7,23 @@ import {
 import CataDeVino from "../images/Carousel/CataDeVino.jpg";
 import CeramoniaDeLosDerviches from "../images/Carousel/CeramoniaDeLosDerviches.jpg";
 import ClaseDeCocinaPrivada from "../images/Carousel/ClaseDeCocinaPrivada.jpg";
-import CulinariosDeEstambul from "../images/Carousel/CulinariosDeEstambul.jpg";
 import DesayunaConLosGlobos from "../images/Carousel/DesayunaConLosGlobos.jpg";
 import ExperienciaDeBicicletaEnCapadocia from "../images/Carousel/ExperienciaDeBicicletaEnCapadocia.jpg";
-import ExperienciaDeBañoTurco from "../images/Carousel/ExperienciaDeBañoTurco.jpg";
-import HelicopteroViajePorEncimaDeEstambul from "../images/Carousel/HelicopteroViajePorEncimaDeEstambul.png";
+import ExperienciaDeBañoTurco from "../images/Carousel/ExperienciaDeBañoTurco.png";
+import HelicopteroViajePorEncimaDeEstambul from "../images/Carousel/HelicopteroViajePorEncimaDeEstambul.jpg";
 import ViajeEnGoleta from "../images/Carousel/ViajeEnGoleta.jpg";
 import VisitaPrivadaDelAzoteaDeGranBazar from "../images/Carousel/VisitaPrivadaDelAzoteaDeGranBazar.jpeg";
 
 const ImageSliderData2 = [
   {
-    title: "Cata de Vino",
-    src: CataDeVino,
+    title: "Helicoptero Viaje por Encima de Estambul",
+    src: HelicopteroViajePorEncimaDeEstambul,
+    alt: "HelicopteroViajePorEncimaDeEstambul",
+  },
+  {
+    title: "Desayuna con Los Globos",
+    src: DesayunaConLosGlobos,
+    alt: "DesayunaConLosGlobos",
   },
   {
     title: "Ceramonia de Los Derviches",
@@ -31,16 +36,6 @@ const ImageSliderData2 = [
     alt: "ClaseDeCocinaPrivada",
   },
   {
-    title: "Culinarios de Estambul",
-    src: CulinariosDeEstambul,
-    alt: "CulinariosDeEstambul",
-  },
-  {
-    title: "Desayuna con Los Globos",
-    src: DesayunaConLosGlobos,
-    alt: "DesayunaConLosGlobos",
-  },
-  {
     title: "Experiencia de Bicicleta en Capadocia",
     src: ExperienciaDeBicicletaEnCapadocia,
     alt: "ExperienciaDeBicicletaEnCapadocia",
@@ -51,9 +46,8 @@ const ImageSliderData2 = [
     alt: "ExperienciaDeBañoTurco",
   },
   {
-    title: "Helicoptero Viaje por Encima de Estambul",
-    src: HelicopteroViajePorEncimaDeEstambul,
-    alt: "HelicopteroViajePorEncimaDeEstambul",
+    title: "Cata de Vino",
+    src: CataDeVino,
   },
   {
     title: "Viaje en Goleta",
