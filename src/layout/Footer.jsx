@@ -71,8 +71,8 @@ export default function Footer(props) {
 
       {/* Footer */}
       <section>
-        <div className="bg-[#39405A] py-6 pl-8 md:pr-8 w-screen">
-          <div className="flex flex-col max-w-7xl md:flex-row items-start md:items-center md:justify-between gap-2">
+        <div className="bg-[#39405A] py-6 pl-8 md:px-20 w-screen">
+          <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-2">
             <p className="text-white">
               © {new Date().getFullYear()} Earthlight Travel. All rights
               reserved.

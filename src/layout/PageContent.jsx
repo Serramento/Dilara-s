@@ -50,10 +50,13 @@ export default function PageContent(props) {
   return (
     <div className="max-w-md md:max-w-7xl">
       {/* About Us */}
-      <section className="bg-[#FAFAFA] md:bg-white" ref={props.aboutUsRef}>
-        <div className="max-w-7xl px-4 md:px-0 ">
-          <div className="text-center mx-5 md:mx-0 bg-white md:bg-[#FAFAFA] px-5 md:px-0 py-20 md:py-24 md:w-screen">
-            <h5 className="text-lg font-bold text-[#98B8DF] mb-3">
+      <section
+        className="w-screen bg-[#FAFAFA] md:bg-white"
+        ref={props.aboutUsRef}
+      >
+        <div className="px-7 md:px-36 ">
+          <div className="text-center px-4 pb-12 py-20 md:pb-24 bg-white md:bg-[#FAFAFA]">
+            <h5 className="text-lg font-bold pb-3 text-[#98B8DF] md:text-center">
               SOBRE NOSOTROS
             </h5>
             <div className="vertical-line2 mb-1"></div>
@@ -142,14 +145,14 @@ export default function PageContent(props) {
       </section>
 
       {/* What We Offer */}
-      <section className="max-w-md md:max-w-7xl " ref={props.servicesRef}>
-        <div className="md:bg-[#FAFAFA] w-screen md:mx-0 md:py-20 mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="w-screen" ref={props.servicesRef}>
+        <div className="md:bg-[#FAFAFA] md:mx-36 md:py-20 px-4 sm:px-6 lg:px-8 text-center">
           <ImageSlider />
         </div>
       </section>
 
       {/* Carousel */}
-      <section className="max-w-md md:max-w-7xl">
+      <section className="">
         <ImageSlider2 />
       </section>
 

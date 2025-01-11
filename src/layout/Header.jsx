@@ -2,6 +2,9 @@ import Goleta from "../images/Goleta.mp4";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import DilarasLogo from "../images/DilarasLogo.png";
+import { Link } from "react-router-dom";
+import EarthLightLogo2 from "../images/EarthLightLogo2.png";
+import AutoPlaySilentVideo from "../components/AutoplaySilentVideo";
 
 export default function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -87,6 +90,15 @@ export default function Header(props) {
                         </div>
                       </button>
                     </li>
+                    <li>
+                      <Link to="https://www.earthlighttravel.com/">
+                        <img
+                          className="w-20 ml-5"
+                          src={EarthLightLogo2}
+                          alt="EarthLightLogo2"
+                        />
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -156,6 +168,16 @@ export default function Header(props) {
                 >
                   CONTACTO
                 </button>
+                <Link
+                  className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#98B8DF] hover:bg-gray-50"
+                  to="https://www.earthlighttravel.com/"
+                >
+                  <img
+                    className="w-24"
+                    src={EarthLightLogo2}
+                    alt="EarthLightLogo2"
+                  />
+                </Link>
               </div>
             </div>
           )}
@@ -164,7 +186,8 @@ export default function Header(props) {
 
       {/* Video */}
       <section className="relative w-screen h-screen md:h-[46rem]">
-        <video
+        <AutoPlaySilentVideo />
+        {/*<video
           src={Goleta}
           id="bannerVideo"
           autoPlay
@@ -172,11 +195,11 @@ export default function Header(props) {
           loop
           className="absolute inset-0 w-full h-full"
           style={{ height: "100%", width: "100%", objectFit: "cover" }}
-        ></video>
+        ></video>*/}
         <div className="absolute inset-0 bg-black/30" />{" "}
         {/* Reduced overlay opacity for better video visibility */}
         <div className="absolute bottom-0 flex items-center justify-center">
-          <div className="flex flex-row justify-between text-center text-white space-y-6 max-w-6xl">
+          <div className="flex flex-row justify-between text-center text-white space-y-6 max-w-7xl">
             <div className="hidden md:flex md:flex-col ml-64 bottom-0">
               <p className="-rotate-90 ">VOLUTA</p>
               <div className="vertical-line mb-1"></div>
