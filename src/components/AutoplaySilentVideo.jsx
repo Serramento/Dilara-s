@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import Goleta from "../images/Goleta.mp4";
-import Egeo from "../images/shutterstock_3601730157.mp4";
+import Egeo from "../images/Egeo.mp4";
 
 export default function AutoPlaySilentVideo() {
   const videoRef = useRef(undefined);

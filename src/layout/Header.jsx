@@ -1,4 +1,3 @@
-import Goleta from "../images/Goleta.mp4";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import DilarasLogo from "../images/DilarasLogo.png";
