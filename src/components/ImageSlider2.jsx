@@ -21,7 +21,7 @@ const ImageSliderData2 = [
     alt: "HelicopteroViajePorEncimaDeEstambul",
   },
   {
-    title: "Desayuna con Los Globos",
+    title: "Desayuno con Globos",
     src: DesayunaConLosGlobos,
     alt: "DesayunaConLosGlobos",
   },

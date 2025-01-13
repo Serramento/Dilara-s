@@ -10,6 +10,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer(props) {
+  const mailtoHref =
+    "mailto:dilara@earthlighttravel.com?subject=SendMail&body=Description";
+  const mailtoHref2 =
+    "mailto:ugur@earthlighttravel.com?subject=SendMail&body=Description";
+
   return (
     <div className="max-w-md md:max-w-7xl">
       {/* Contact Info */}
@@ -33,7 +38,7 @@ export default function Footer(props) {
 
           <div className="space-y-4 mb-16 md:mr-24 md:space-y-6 md:mb-0">
             <h3 className="text-lg font-semibold text-center md:text-left">
-              Ponte en Contacto
+              Ponte en Contacto con Nosotros
             </h3>
             <ul className="space-y-2 text-white md:space-y-4">
               <div className="flex flex-row w-64">
@@ -56,15 +61,20 @@ export default function Footer(props) {
                   className="h-6 mt-1 mr-2"
                 />
                 <li>
-                  dilara@earthlighttravel.com <br /> ugur@earthlighttravel.com
+                  <a href={mailtoHref} className="text-white underline">
+                    dilara@earthlighttravel.com
+                  </a>
+                  <br />{" "}
+                  <a href={mailtoHref2} className="text-white underline">
+                    ugur@earthlighttravel.com
+                  </a>
                 </li>
               </div>
             </ul>
           </div>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.803237059692!2d29.03705507589835!3d41.007679671350616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab95eb3e9ca39%3A0xed1b02ec1b80dfaa!2sEarthlight%20Travel%20Services!5e0!3m2!1str!2str!4v1736174244800!5m2!1str!2str"
-            width="350"
-            height="250"
+            className="sm:w-60 sm:h-48 w-80 h-60 md:w-96 md:h-72"
           ></iframe>
         </div>
       </section>
@@ -73,7 +83,7 @@ export default function Footer(props) {
       <section>
         <div className="bg-[#39405A] py-6 pl-8 md:px-20 w-screen">
           <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-2">
-            <p className="text-white">
+            <p className="text-white sm:text-left">
               © {new Date().getFullYear()} Earthlight Travel. All rights
               reserved.
             </p>

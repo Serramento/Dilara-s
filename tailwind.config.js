@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        sm: "320px",
         md: "640px",
       },
       fontFamily: {

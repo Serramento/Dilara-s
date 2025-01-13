@@ -204,7 +204,7 @@ export default function PageContent(props) {
                     Ugur Kiyici
                   </h5>
                   <p className="text-[#39405A] text-lg md:text-left italic">
-                    Chief of Operations
+                    Jefe de Operaciones
                   </p>
                   <p className="mt-3 text-md text-[#C0BABA] md:text-left">
                     ¡Hola! Soy Uğur.  Bienvenidos a mi rincón de mundo digital,

@@ -86,16 +86,16 @@ const ImageSlider = () => {
           <div key={index}>
             {index === current && (
               <div className="flex flex-col justify-center items-center md:flex-row index-0">
-                <div className="index-0 ml-5 mt-24 md:mt-0 md:ml-0 md:-rotate-90">
+                <div className="hidden md:flex index-0 ml-5 mt-24 md:mt-0 md:ml-0 md:-rotate-90">
                   <ArrowButton direction="left" handleClick={prevSlide} />
                   <ArrowButton direction="right" handleClick={nextSlide} />
                 </div>
                 <div className="w-72 mt-5 md:w-[26rem] md:mr-10 md:text-left md:mt-10 index-0">
-                  <h5 className="text-lg font-bold text-[#98B8DF] mb-3">
+                  <h5 className="text-lg font-bold mt-12 md:mt-0 text-[#98B8DF] mb-3">
                     ¿QUE OFRECEMOS?
                   </h5>
                   <div className="vertical-line2 md:ml-20 mb-1"></div>
-                  <div className="flex flex-col h-72 mb-5 md:items-left">
+                  <div className="flex flex-col h-72 md:items-left">
                     <h2 className="text-3xl md:text-5xl font-bold text-[#39405A] italic">
                       {slide.title}
                     </h2>
@@ -104,7 +104,11 @@ const ImageSlider = () => {
                     </h4>
                   </div>
                 </div>
-                <div className="h-[15rem] w-[15rem] md:h-[20rem] md:w-[20rem] mb-20 md:mb-10 index-0 ml-5 md:ml-0 md:mt-20">
+                <div className="md:hidden index-0 ml-5 mb-3">
+                  <ArrowButton direction="left" handleClick={prevSlide} />
+                  <ArrowButton direction="right" handleClick={nextSlide} />
+                </div>
+                <div className="h-[15rem] w-[15rem] md:h-[20rem] md:w-[20rem] mb-20 md:mb-10 index-0 md:mt-20">
                   <img
                     src={slide.src}
                     alt="travel image"

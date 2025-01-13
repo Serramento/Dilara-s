@@ -147,7 +147,7 @@ const ImageSlider3 = () => {
         <h2 className="text-5xl font-bold mx-5 mt-1 text-[#39405A] mb-12 md:w-64 md:mx-0 md:text-left">
           Viajeros Satisfechos
         </h2>
-        <div className="ml-5 mb-10 md:m-0">
+        <div className="ml-5 mb-3 md:m-0">
           <ArrowButton direction="left" handleClick={prevSlide} />
           <ArrowButton direction="right" handleClick={nextSlide} />
         </div>
@@ -158,14 +158,14 @@ const ImageSlider3 = () => {
           <div key={index}>
             {index === current && (
               <div className="flex flex-row md:ml-10">
-                <div className="shadow-md w-96 md:w-[40rem] bg-[#FAFAFA]">
-                  <div className="h-80 md:h-65 relative">
+                <div className="shadow-md w-96 sm:w-72 md:w-[40rem] bg-[#FAFAFA]">
+                  <div className="h-48 md:h-64 relative">
                     <img
                       src={slide.src}
                       className="w-full h-full object-cover grayscale"
                     />
                   </div>
-                  <div className="m-7 text-left h-[20rem] md:h-48 flex flex-col justify-between">
+                  <div className="m-7 text-left h-[20rem] sm:h-[27rem] md:h-48 flex flex-col justify-between">
                     <p className="text-[#C0BABA] text-sm font-semibold text-left mt-3">
                       {slide.comment}
                     </p>
