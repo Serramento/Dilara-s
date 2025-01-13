@@ -196,8 +196,6 @@ export default function Header(props) {
           className="absolute inset-0 w-full h-full"
           style={{ height: "100%", width: "100%", objectFit: "cover" }}
         ></video>*/}
-        <div className="absolute inset-0 bg-black/30" />{" "}
-        {/* Reduced overlay opacity for better video visibility */}
         <div className="absolute bottom-0 flex items-center justify-center">
           <div className="flex flex-row justify-between text-center text-white space-y-6 max-w-7xl">
             <div className="hidden md:flex md:flex-col ml-64 bottom-0">
