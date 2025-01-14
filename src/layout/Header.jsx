@@ -199,13 +199,13 @@ export default function Header(props) {
         {/* Reduced overlay opacity for better video visibility */}
         <div className="absolute bottom-0 flex items-center justify-center">
           <div className="flex flex-row justify-between text-center text-white space-y-6 max-w-7xl">
-            <div className="hidden md:flex md:flex-col ml-64 bottom-0">
+            {/*<div className="hidden md:flex md:flex-col ml-64 bottom-0">
               <p className="-rotate-90 ">VOLUTA</p>
               <div className="vertical-line mb-1"></div>
-            </div>
-            <div className="relative mx-12 md:ml-64 bottom-20">
+            </div>*/}
+            <div className="relative mx-12 md:ml-48 bottom-20 md:bottom-40">
               <h1 className="text-4xl text-left md:text-right md:text-6xl opacity-90 italic leading-normal">
-                La Bahía Escondida en el Mar Egeo
+                Más Allá De Los Sueños
               </h1>
             </div>
           </div>

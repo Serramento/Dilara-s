@@ -52,7 +52,7 @@ export default function Footer(props) {
                 />
                 <li>
                   Kosuyolu Mah. Imar Limited Sk. Laila Apt. No:24 D:1
-                  Kadikoy/Istanbul TURQUÍA
+                  Kadikoy/Istanbul TURQUIA
                 </li>
               </div>
               <div className="flex flex-row w-64">
