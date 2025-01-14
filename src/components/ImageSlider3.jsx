@@ -158,14 +158,14 @@ const ImageSlider3 = () => {
           <div key={index}>
             {index === current && (
               <div className="flex flex-row md:ml-10">
-                <div className="shadow-md w-96 sm:w-72 md:w-[40rem] bg-[#FAFAFA]">
+                <div className="shadow-md sm:w-96 w-72 md:w-[40rem] bg-[#FAFAFA]">
                   <div className="h-48 md:h-64 relative">
                     <img
                       src={slide.src}
                       className="w-full h-full object-cover grayscale"
                     />
                   </div>
-                  <div className="m-7 text-left h-[20rem] sm:h-[27rem] md:h-48 flex flex-col justify-between">
+                  <div className="m-7 text-left sm:h-[20rem] h-[27rem] md:h-48 flex flex-col justify-between">
                     <p className="text-[#C0BABA] text-sm font-semibold text-left mt-3">
                       {slide.comment}
                     </p>

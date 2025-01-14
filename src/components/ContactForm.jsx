@@ -1,23 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { nanoid } from "nanoid";
 import { toast } from "react-toastify";
-import axios from "axios";
-
-export const initialContacts = [];
+import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
-  const [contacts, setContacts] = useState(initialContacts);
-
-  const axiosInstance = axios.create({
-    baseURL: "https://workintech-fe-ecommerce.onrender.com",
-  });
-
-  function handleContactSubmit(newContact) {
-    setContacts([newContact, ...contacts]);
-    toast.success("Tu mensaje ha sido entregado.");
-  }
-
   const {
     register,
     handleSubmit,
@@ -33,20 +19,24 @@ export default function ContactForm() {
   });
 
   const submitHandler = (data, event) => {
-    handleContactSubmit({ ...data });
     const sentData = {
-      name: data.name,
+      from_name: data.name,
       email: data.email,
       subject: data.subject,
       message: data.message,
     };
 
-    axiosInstance
-      .post("/signup", JSON.stringify(sentData), {
-        headers: { "Content-Type": "application/json" },
+    const serviceId = "service_d1tn7wn";
+    const templateId = "template_2xx1nt5";
+    const publicKey = "nxO2Y4RWqs89VH9kH";
+
+    emailjs
+      .send(serviceId, templateId, sentData, {
+        publicKey: publicKey,
       })
       .then((response) => {
         console.log(response.data);
+        toast.success("Tu mensaje ha sido entregado.");
         reset();
       })
       .catch((error) => {
@@ -83,7 +73,7 @@ export default function ContactForm() {
         <div>
           <div className="mt-24 mb-8">
             <input
-              className="w-80 md:w-[28rem] h-16 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
+              className="sm:w-80 w-72 md:w-[28rem] h-16 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
               placeholder="Nombre*"
               id="name"
               type="text"
@@ -98,7 +88,7 @@ export default function ContactForm() {
 
           <div className="mb-8">
             <input
-              className="w-80 md:w-[28rem] h-16 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
+              className="sm:w-80 w-72 md:w-[28rem] h-16 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
               placeholder="Correo*"
               id="email"
               type="text"
@@ -118,7 +108,7 @@ export default function ContactForm() {
 
           <div className="mb-8">
             <input
-              className="w-80 md:w-[28rem] h-16 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
+              className="sm:w-80 w-72 md:w-[28rem] h-16 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
               placeholder="Sujeto*"
               id="subject"
               type="text"
@@ -133,7 +123,7 @@ export default function ContactForm() {
         <div className="md:mt-24 md:ml-10">
           <div className="mb-8">
             <textarea
-              className="w-80 pt-4 md:w-[28rem] h-48 md:h-64 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
+              className="sm:w-80 w-72 pt-4 md:w-[28rem] h-48 md:h-64 pl-5 bg-[#F9F9F9] border-[2px] border-[#E6E6E6] rounded-xl placeholder-[#737373] "
               placeholder="Mesaje*"
               id="description"
               {...register("message", { validate: validateMessage })}

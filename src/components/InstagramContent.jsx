@@ -6,9 +6,9 @@ import { InstagramEmbed } from "react-social-media-embed";
 
 const InstagramContent = (props) => {
   return (
-    <div className="shadow-md mb-10 md:mb-0 md:mx-5 w-80 lg:w-65 bg-[#FAFAFA]">
+    <div className="shadow-md mb-10 md:mb-0 md:mx-5 w-72 sm:w-80 md:w-65 bg-[#FAFAFA]">
       <div>
-        <div className="h-70 lg:h-65 relative">
+        <div className="h-70 md:h-65 relative">
           <div style={{ display: "flex", justifyContent: "center" }}>
             <InstagramEmbed
               url={props.post.href}

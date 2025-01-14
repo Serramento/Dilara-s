@@ -93,7 +93,7 @@ const ImageSlider2 = () => {
           <div key={index}>
             {index === current && (
               <div className="flex items-center justify-center w-screen relative h-screen md:h-[46rem] index-0">
-                <div className="flex flex-col absolute w-[23rem] md:w-[70rem] md:text-left md:mt-10 index-0">
+                <div className="flex flex-col absolute sm:w-[23rem] w-[18rem] md:w-[70rem] md:text-left md:mt-10 index-0">
                   <div className="flex justify-between index-0">
                     <ArrowButton direction="left" handleClick={prevSlide} />
                     <ArrowButton direction="right" handleClick={nextSlide} />
